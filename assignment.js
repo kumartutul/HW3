@@ -1,18 +1,29 @@
 function feetToMile(feet){
-    var mile = feet / 5280;
+    if (feet < 0){
+        return "Distance can't be negative.";
+    }
+    else{
+        var mile = feet / 5280;
+    }
     return mile;
+    
 }
-var result = feetToMile(1000);
+var result = feetToMile(85);
 console.log(result);
 
 function woodCalculator(chair, table, bed){
-    var chairCount = chair * 1;
-    var tableCount = table * 3;
-    var bedCount = bed * 5;
-    var totalWood = chairCount + tableCount+ bedCount;
+    if ((chair | table | bed) < 0){
+        return 'Invalid input.';
+    }
+    else{
+        var chairCount = chair * 1;
+        var tableCount = table * 3;
+        var bedCount = bed * 5;
+        var totalWood = chairCount + tableCount+ bedCount;
+    }
     return totalWood;
 }
-var woodResult = woodCalculator(50, 70, 100);
+var woodResult = woodCalculator(10, 25, 8);
 console.log(woodResult);
 
 function tinyFriend(name){
