@@ -11,6 +11,7 @@ function feetToMile(feet){
 var result = feetToMile(85);
 console.log(result);
 
+
 function woodCalculator(chair, table, bed){
     if ((chair | table | bed) < 0){
         return 'Invalid input.';
@@ -26,17 +27,39 @@ function woodCalculator(chair, table, bed){
 var woodResult = woodCalculator(10, 25, 8);
 console.log(woodResult);
 
-function tinyFriend(name){
-    var smallest = name[0];
-    var indexNumber = 1;
-    while (indexNumber < name.length){
-        var currentName = name[indexNumber];
-        if(currentName < smallest){
-            smallest = currentName;
-        }
-        indexNumber++;
+
+function brickCalculator(number){
+    if (number >= 0 && number <= 10){
+        number *= 15000;
+        return number;
     }
-    return smallest;
+    else if (number >= 11 && number <= 20){
+        number2 = number - 10;
+        number2 = number2 * 12000 + 150000;
+        return number2;
+    }
+    else if (number >= 21){
+        number3 = number - 20;
+        number3 = number3 * 10000 + 270000;
+        return number3;
+    }
+    else{
+        return "Invalid Number."
+    }
 }
-var nameResult = tinyFriend([89, 21, 47, 8, 21, 4, 587]);
-console.log(nameResult);
+var brickCount = brickCalculator(45);
+console.log(brickCount);
+
+
+function tinyFriend( words ) {
+    var min = words[0];
+   for ( i = 0; i < words.length; i++ ){
+        var currentName = words[i];
+        if( currentName.length < min.length){
+            min = currentName;
+        }
+    }
+    return min;
+}
+var name = tinyFriend(['abdul', 'adu', 'henry', 'shah']);
+console.log(name);
